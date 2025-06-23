@@ -41,6 +41,8 @@ find_package(sensor_msgs)
 find_package(geometry_msgs)
 find_package(SDL2)
 find_package(std_srvs)
+find_package(omnipicker_interfaces REQUIRED)  #5.28 add omnipicker
+
 
 add_ros2_aimrt_rpc_gencode_target_for_one_file(
   TARGET_NAME std_srvs_aimrt_rpc_gencode
@@ -77,6 +79,10 @@ target_link_libraries(
          geometry_msgs::geometry_msgs__rosidl_typesupport_cpp
          geometry_msgs::geometry_msgs__rosidl_typesupport_fastrtps_cpp
          geometry_msgs::geometry_msgs__rosidl_typesupport_introspection_cpp
+         omnipicker_interfaces::omnipicker_interfaces__rosidl_generator_cpp
+         omnipicker_interfaces::omnipicker_interfaces__rosidl_typesupport_cpp
+         omnipicker_interfaces::omnipicker_interfaces__rosidl_typesupport_fastrtps_cpp
+         omnipicker_interfaces::omnipicker_interfaces__rosidl_typesupport_introspection_cpp
          std_srvs::std_srvs__rosidl_generator_cpp
          std_srvs::std_srvs__rosidl_typesupport_cpp
          std_srvs::std_srvs__rosidl_typesupport_fastrtps_cpp
